@@ -39,7 +39,7 @@ jobs:
 
   build-windows-verson:
     name: Windows build
-    runs-on: windows-2019
+    runs-on: windows-2022
     steps:
       - name: Check out repo
         uses: actions/checkout@v2
@@ -63,6 +63,14 @@ jobs:
           name: parental-control-windows
           path: |
             parental-control-setup.exe
+
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: parental-control-windows-exe
+          path: |
+            parental-control.exe
+
       - name: Assets Uploading # https://gist.github.com/joncardasis/e6494afd538a400722545163eb2e1fa5
         if: github.ref == 'refs/heads/master'
         run: |
