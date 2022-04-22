@@ -71,6 +71,12 @@ jobs:
           path: |
             parental-control.exe
 
+      - uses: actions/upload-artifact@v2
+        with:
+          name: parental-control-web-exe
+          path: |
+            parental-control-web.exe
+            
       - name: Assets Uploading # https://gist.github.com/joncardasis/e6494afd538a400722545163eb2e1fa5
         if: github.ref == 'refs/heads/master'
         run: |
